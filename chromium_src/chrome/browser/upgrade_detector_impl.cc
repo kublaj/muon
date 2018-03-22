@@ -12,6 +12,10 @@ class UpgradeDetectorImpl : public UpgradeDetector {
   base::TimeDelta GetHighAnnoyanceLevelDelta() override {
     return base::TimeDelta();
   }
+
+  base::TimeTicks GetHighAnnoyanceDeadline() override {
+    return base::TimeTicks();
+  }
 };
 }
 
