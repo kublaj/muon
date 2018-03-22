@@ -4,8 +4,19 @@
 
 #include "chrome/browser/upgrade_detector.h"
 
+namespace {
+class UpgradeDetectorImpl : public UpgradeDetector {
+ private:
+  // UpgradeDetector overrides:
+  // Not used in Brave.
+  base::TimeDelta GetHighAnnoyanceLevelDelta() override {
+    return base::TimeDelta();
+  }
+};
+}
+
 // static
 UpgradeDetector* UpgradeDetector::GetInstance() {
-  static auto* const instance = new UpgradeDetector();
+  static auto* const instance = new UpgradeDetectorImpl();
   return instance;
 }
