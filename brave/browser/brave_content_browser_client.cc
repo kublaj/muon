@@ -47,7 +47,6 @@
 #include "components/content_settings/core/common/content_settings.h"
 #include "components/content_settings/core/common/content_settings_types.h"
 #include "components/password_manager/content/browser/content_password_manager_driver_factory.h"
-#include "components/spellcheck/spellcheck_build_features.h"
 #include "components/variations/variations_switches.h"
 #include "content/public/browser/browser_thread.h"
 #include "content/public/browser/navigation_handle.h"
@@ -86,10 +85,6 @@
 #include "services/ui/public/cpp/gpu/gpu.h"
 #include "ui/aura/mus/window_tree_client.h"
 #include "ui/views/mus/mus_client.h"
-#endif
-
-#if BUILDFLAG(USE_BROWSER_SPELLCHECKER)
-#include "components/spellcheck/browser/spell_check_host_impl.h"
 #endif
 
 #if defined(USE_NSS_CERTS)
