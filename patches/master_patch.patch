@@ -135,7 +135,7 @@ index 960921acd7ebb0ba99092745e8d30bca76821f2a..a223e8ea1db840d5abc8587adfb8970a
  
  assert(!is_ios, "Chromium/iOS shouldn't use anything in //chrome")
 diff --git a/chrome/browser/chrome_content_browser_manifest_overlay.json b/chrome/browser/chrome_content_browser_manifest_overlay.json
-index 19cb2b02d4c944988f9f928b3dbda166a9233d3f..af1bd76f33cf607d112d1dd0949955712ea32845 100644
+index 19cb2b02d4c944988f9f928b3dbda166a9233d3f..cddd71e1aef22f4930626f09a545c738cc305474 100644
 --- a/chrome/browser/chrome_content_browser_manifest_overlay.json
 +++ b/chrome/browser/chrome_content_browser_manifest_overlay.json
 @@ -12,7 +12,7 @@
@@ -147,6 +147,14 @@ index 19cb2b02d4c944988f9f928b3dbda166a9233d3f..af1bd76f33cf607d112d1dd094995571
            "safe_browsing::mojom::SafeBrowsing",
            "translate::mojom::ContentTranslateDriver"
          ],
+@@ -49,6 +49,7 @@
+         "patch": [ "patch_file" ],
+         "pdf_compositor": [ "compositor" ],
+         "profile_import": [ "import" ],
++        "tor_launcher": [ "tor_launcher" ],
+         "profiling": [ "profiling" ],
+         "proxy_resolver": [ "factory" ],
+         "preferences": [ "pref_client", "pref_control" ],
 diff --git a/chrome/browser/chrome_service.cc b/chrome/browser/chrome_service.cc
 index 1bd2e1d014ec61491a2904b30c9197da3691c46d..87dd94ff56138b4d81f9b05c0c49f7fc644d7ed4 100644
 --- a/chrome/browser/chrome_service.cc

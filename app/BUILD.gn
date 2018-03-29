@@ -10,6 +10,7 @@ service_manifest("brave_content_packaged_services_manifest_overlay") {
   source = "//chrome/browser/chrome_content_packaged_services_manifest_overlay.json"
   packaged_services = [
     "//chrome/utility:profile_import_manifest",
+    ":tor_launcher_manifest",
   ]
 }
 
@@ -32,6 +33,11 @@ if (use_aura) {
       ":brave_content_packaged_services_manifest_overlay",
     ]
   }
+}
+
+service_manifest("tor_launcher_manifest") {
+  name = "tor_launcher"
+  source = "//electron//brave/utility/tor/tor_manifest.json"
 }
 
 grit("brave_strings") {
